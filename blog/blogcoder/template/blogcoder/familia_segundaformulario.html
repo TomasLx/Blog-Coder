@@ -1,0 +1,17 @@
+{% extends "EntregableApp/padre.html" %}
+{% load static%}
+{% block section_name %}
+<h1>Agregar famialiares a la familia segunda</h1>
+<h3>Pagina de Formulario Familia Segunda</h3>
+{% endblock %}
+{% block contenidoQueCambia %}
+{% if miFormulario.errors %}
+<p style="color: red;">Estan mal los datos, revisar</p>
+{% endif %}
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }} 
+    </table>
+    <input type="submit", value="Enviar">
+</form>
+{% endblock %}  

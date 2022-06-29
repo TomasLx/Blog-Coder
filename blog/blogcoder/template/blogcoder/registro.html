@@ -1,15 +1,12 @@
 {% extends "blogcoder/padre.html" %}
 {% load static%}
 {% block contenidoQueCambia %}
-<body>
-    <form action="" method="POST">
-        {%csrf_token %}
-        {{form.as_p}}
-        <button type="submit"> Registrarse</button>
-    </form>
-</body>
-</html>
 {% endblock %}
 {% block section_name %}
-<h3>Login</h3>
+<h3>Sign Up</h3>
+<form action="" method="POST">
+    {%csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> Registrarse</button>
+</form>
 {% endblock %}

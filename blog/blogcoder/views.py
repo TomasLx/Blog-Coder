@@ -9,6 +9,7 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from blogcoder.models import Blogs
+from django.urls import reverse_lazy;
 
 
 def inicio(request):
@@ -22,6 +23,11 @@ def blog(request):
     plantilla = loader.get_template('blogcoder/blog.html')
     documento = plantilla.render(contexto)
     return HttpResponse(documento)
+
+class BlogDetalle(DetailView):
+
+    model = Blogs
+    template_name= "blogcoder/blog_detail.html"
 
 class BlogCreacion(CreateView):
 

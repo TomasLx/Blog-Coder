@@ -13,5 +13,6 @@ urlpatterns = [
     path("blogdetalle/<pk>", BlogDelete.as_view(), name='Delete'),
     path("blogupdate/<pk>", BlogUpdate.as_view(), name='Update'),
     path("blog/<pk>", BlogDetalle.as_view(), name='Detalle'),
-    path("editarperfil/", editarPerfil, name='Editar Perfil'),
+    path("editarperfil/", editarPerfil, name='EditarPerfil'),
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     ]

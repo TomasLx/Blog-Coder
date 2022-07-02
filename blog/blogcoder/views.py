@@ -77,27 +77,18 @@ class BlogDelete(DeleteView):
 
 @login_required
 def editarPerfil(request):
+  usuario = request.user
 
-    usuario = request.user
+  if request.method == 'POST':
+    formulario = UserEditForm(request.POST, instance=usuario)
+    if formulario.is_valid():
+      informacion = formulario.cleaned_data
+      usuario.email = informacion['email']
+      usuario.password1 = informacion['password1']
+      usuario.password2 = informacion['password2']
+      usuario.save()
 
-    if request.method == 'POST':
-
-        miFormulario = UserEditForm(request.POST)
-
-        if miFormulario.is_valid():
-
-            informacion = miFormulario.cleaned_data
-
-            usuario.email = informacion['email']
-            usuario.password1 = informacion['password1']
-            usuario.password2 = informacion['password2']
-
-            usuario.save()
-
-            return render(request, 'blogcoder/inicio.html')
-
-    else:
-
-        miFormulario = UserEditForm(initial={'email':usuario.email})
-
-    return render(request, "blogcoder/editarPerfil.html", {"miFormulario":miFormulario, "usuario":usuario})
+      return render(request, 'blogcoder/inicio.html', {'usuario': usuario, 'mensaje': 'Datos actualizados correctamente'})
+  else:
+    formulario = UserEditForm(instance=usuario)
+  return render(request, 'blogcoder/editarPerfil.html', {'formulario': formulario, 'usuario': usuario.username})

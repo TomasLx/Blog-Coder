@@ -12,13 +12,13 @@ def inicio(request):
     documento = plantilla.render()
     return HttpResponse(documento)
 
-def login(request):
+def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data = request.POST)
         if form.is_valid():
-            usuario = form.cleaned_data.get("usuario")
-            contraseña = form.cleaned_data.get("contraseña")
-            user = authenticate(usuario=usuario, contraseña=contraseña)
+            usuario = form.cleaned_data.get("username")
+            contraseña = form.cleaned_data.get("password")
+            user = authenticate(username=usuario, password=contraseña)
             if user is not None:
                 login(request, user)
                 return render(request, 'blogcoder/Inicio.html', {'mensaje':f'Bienvenido{usuario}'})

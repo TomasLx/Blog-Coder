@@ -5,6 +5,10 @@ from django.template import loader
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from blogcoder.forms import UserRegistrationForm
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from blogcoder.models import Blogs
 
 
 def inicio(request):
@@ -12,6 +16,18 @@ def inicio(request):
     documento = plantilla.render()
     return HttpResponse(documento)
 
+def blog(request):
+    blog = Blogs(titulo="hola", subtitulo= "cg", cuerpo="hola", autor = "yo", imagen= "gos", fecha= "2022-2-2")
+    blog.save()
+    plantilla = loader.get_template('blogcoder/blog.html')
+    documento = plantilla.render()
+    return HttpResponse(documento)
+
+class BlogCreacion(CreateView):
+
+    model = Blogs
+    success_url = "/blogcoder/blog"
+    fields = ["titulo", "subtitulo", "cuerpo", "autor", "imagen", "fecha" ]
 def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data = request.POST)

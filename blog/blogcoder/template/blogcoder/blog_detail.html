@@ -12,4 +12,8 @@
 </div>
 <p>{{blogs.autor}}</p>
 <p>{{blogs.fecha}}</p>
+<p>{% if request.user.is_authenticated %}
+<a href=" {%url 'Delete' blogs.id %}">Borrar</a></p>
+<a href=" {%url 'Update' blogs.id %}">Editar</a></p>
+{% endif%}
 {% endblock %}

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-class Blogs(LoginRequiredMixin):
+class Blogs(models.Model):
 
     titulo = models.CharField(max_length=50)
 
@@ -9,9 +9,9 @@ class Blogs(LoginRequiredMixin):
 
     cuerpo = models.CharField(max_length=255)
 
-    autor = models.CharField()
+    autor = models.CharField(max_length=255)
 
-    imagen = models.CharField()
+    imagen = models.CharField(max_length=2555)
 
     fecha = models.DateTimeField()
 

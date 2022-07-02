@@ -1,0 +1,15 @@
+{% extends "blogcoder/padre.html" %}
+
+{% load static%}
+
+{% block contenido %}
+<h1 style="margin-top: 0px;" class="masthead-heading mb-0">{{blogs.titulo}}</h1>
+<h3>{{blogs.subtitulo}} </h3>
+
+<img src="{{blogs.imagen}}" class="img" alt="Imagen Rota">
+<div class="container" style="display: flex" >
+    <p>{{blogs.cuerpo}}</p>
+</div>
+<p>{{blogs.autor}}</p>
+<p>{{blogs.fecha}}</p>
+{% endblock %}

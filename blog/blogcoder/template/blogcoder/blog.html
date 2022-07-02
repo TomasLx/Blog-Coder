@@ -4,16 +4,17 @@
 
 {% block contenido %}
 <h1 class="masthead-heading mb-0">Blogs</h1>
-<div class="container" >
-    {% for blog in blog %}
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+<div class="container" style="display: flex" >
+    {% for blog in blogs %}
+    <div class="card" style="width: 18rem; color: black;  margin:10px">
+        <img src="{{blog.imagen}}" class="card-img-top" alt="Imagen Rota">
         <div class="card-body">
           <h5 class="card-title">{{blog.titulo}}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p class="card-text">{{blog.subtitulo}}</p>
+          <a href="/blogcoder/{{blog.id}}" class="btn btn-primary">Leer mas...</a>
         </div>
       </div>
     {% endfor %}
 </div>
 {% endblock %}
+

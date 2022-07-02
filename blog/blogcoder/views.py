@@ -17,10 +17,10 @@ def inicio(request):
     return HttpResponse(documento)
 
 def blog(request):
-    blog = Blogs(titulo="hola", subtitulo= "cg", cuerpo="hola", autor = "yo", imagen= "gos", fecha= "2022-2-2")
-    blog.save()
+    blogs = Blogs.objects.all()
+    contexto = { 'blogs' : blogs}
     plantilla = loader.get_template('blogcoder/blog.html')
-    documento = plantilla.render()
+    documento = plantilla.render(contexto)
     return HttpResponse(documento)
 
 class BlogCreacion(CreateView):

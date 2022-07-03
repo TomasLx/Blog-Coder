@@ -21,3 +21,5 @@ urlpatterns = [
     path("blogcoder/", include("blogcoder.urls")),
     
 ]
+
+handler404 = 'blogcoder.views.error_404_view'

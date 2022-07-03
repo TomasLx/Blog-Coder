@@ -12,6 +12,13 @@ from blogcoder.models import Blogs
 from django.urls import reverse_lazy;
 from django.contrib.auth.decorators import login_required
 
+
+def error_404_view(request, exception):
+   
+    # we add the path to the the 404.html file
+    # here. The name of our HTML file is 404.html
+    return render(request, 'blogcoder/404.html')
+
 def inicio(request):
     plantilla = loader.get_template('blogcoder/Inicio.html')
     documento = plantilla.render()

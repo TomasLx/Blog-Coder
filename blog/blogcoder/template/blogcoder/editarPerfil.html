@@ -16,11 +16,11 @@
                            
                             <h1>Editar datos de usuario</h1>
 
-                            <form action="" method="POST">  {% csrf_token %}
+                            <form action="{%url 'EditarPerfil' %}" method="POST">  {% csrf_token %}
 
                                 <table>
                         
-                                    {{ miFormulario.as_table }}
+                                    {{ formulario.as_table }}
                         
                         
                                 </table>

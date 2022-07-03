@@ -4,9 +4,9 @@
 {% endblock %}
 {% block contenido %}
 <h3>Sign Up</h3>
-<form action="" method="POST">
-    {%csrf_token %}
-    {{form.as_p}}
-    <button type="submit"> Registrarse</button>
+<form  action="" method="POST">
+        {%csrf_token %}
+        {{form.as_p}}
+        <button type="submit"> Registrarse</button>
 </form>
 {% endblock %}

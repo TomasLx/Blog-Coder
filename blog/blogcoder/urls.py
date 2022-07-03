@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import inicio, login_request, registro, blog, BlogCreacion, BlogDetalle, BlogDelete, BlogUpdate, editarPerfil
+from .views import inicio, login_request, nosotros, registro, blog, BlogCreacion, BlogDetalle, BlogDelete, BlogUpdate, editarPerfil
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -13,6 +13,6 @@ urlpatterns = [
     path("blogdetalle/<pk>", BlogDelete.as_view(), name='Delete'),
     path("blogupdate/<pk>", BlogUpdate.as_view(), name='Update'),
     path("blog/<pk>", BlogDetalle.as_view(), name='Detalle'),
-    path("editarperfil/", editarPerfil, name='EditarPerfil'),
+    path("editarperfil/", editarPerfil, name='Editar Perfil'),
+    path("nosotros/", nosotros, name='Nosotros'),
     path(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    ]

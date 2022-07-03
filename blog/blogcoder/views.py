@@ -17,6 +17,11 @@ def inicio(request):
     documento = plantilla.render()
     return HttpResponse(documento)
 
+def nosotros(request):
+    plantilla = loader.get_template('blogcoder/sobrenosotros.html')
+    documento = plantilla.render()
+    return HttpResponse(documento)
+
 def blog(request):
     blogs = Blogs.objects.all()
     contexto = { 'blogs' : blogs}

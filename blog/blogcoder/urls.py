@@ -15,5 +15,5 @@ urlpatterns = [
     path("blog/<pk>", BlogDetalle.as_view(), name='Detalle'),
     path("editarperfil/", editarPerfil, name='Editar Perfil'),
     path("nosotros/", nosotros, name='Nosotros'),
-    ]
-
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+]

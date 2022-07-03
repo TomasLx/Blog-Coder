@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3^-2db9(1bq$s35q_)=zq3m(e^9ir5ya_+kx5a6j#34=jfsliz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r"C:\Users\yo\Desktop\Django\Blog\Blog-Coder\blog\blogcoder\template"],
+        'DIRS': [r"C:\Users\Tomas\OneDrive\Desktop\Tomás\Full Stack Developer\CoderHouse\Python\Blog-Coder\blog\blogcoder\template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

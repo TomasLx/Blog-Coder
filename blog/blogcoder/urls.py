@@ -16,3 +16,4 @@ urlpatterns = [
     path("editarperfil/", editarPerfil, name='Editar Perfil'),
     path("nosotros/", nosotros, name='Nosotros'),
     ]
+

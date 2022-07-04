@@ -11,6 +11,10 @@ En el archivo settings.py que se encuentra en la carpeta blog se debe tener conf
 
 En VSC hacer click derecho en la carpeta template que se encuentra en blogcoder, luego hacer click en copy path y pegar en la linea 58 del archivo settings.py en la carpeta blog de la misma manera que se encuentra (teniendo en cuenta el formato)
 
+Es importante instalar ckeditor por lo que correr el comando: 
+
+pip install django-ckeditor
+
 ## Empecemos <br>
 Abrir la carpeta del repositorio y ubicarse en la carpeta Blog-Coder>>blog. <br><br>
 Una vez realizado ese paso, ejecutar el comando "python manage.py runserver" e ingresar al link del servidor agregando "/blogcoder" para ingresar a la vista principal de la web.
